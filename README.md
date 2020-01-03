@@ -1,2 +1,24 @@
 # max_size_text
-Maximizes the size of text given given available real estate
+
+Maximize size of text given available real-estate.
+
+
+# Pull Requests
+Pull requests are welcome!
+
+
+# Usage
+Add a new dependency line to your project/pubspec.yaml file:
+
+```yaml
+dependencies:
+  ...
+  max_size_text: 0.1.0      # use latest version
+```
+
+Don't forget to *flutter pub get*.
+
+
+# Examples
+## Default Styling Example
+### Code:
