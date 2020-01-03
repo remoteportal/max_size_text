@@ -46,6 +46,17 @@ class MaxSizeTextState extends State<MaxSizeText> {
 
     print("s=$s len=${s.length}");
 
+//    TextSpan span = new TextSpan(
+//        style: new TextStyle(
+//            color: Colors.blue[800], fontSize: 24.0, fontFamily: 'Roboto'),
+//        text: "texxxxx");
+//    TextPainter tp =
+//    new TextPainter(text: span, textDirection: TextDirection.ltr);
+//    tp.layout();
+//    log("height=${tp.height}");
+//    log("width=${tp.width}");
+//
+
     double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;
     print("screen: width=$width height=$height");
@@ -146,33 +157,35 @@ class MaxSizeTextState extends State<MaxSizeText> {
 
     var list = List<Widget>();
     a.forEach((sub) {
-      print("sub: $sub");
+//      print("sub: $sub");
       span = new TextSpan(style: widget.textStyle, text: sub);
 
-      list.add(Center(child: RichText(text: span)));
+      list.add(Center(child: RichText(text: span))); //TODO//HELP:Center
     });
 
-    return MaterialApp(
-      home: Scaffold(
-        body: SafeArea(
-          child: Column(children: list
-//            children: <Widget>[
-//              Center(
-////            child: Container(
-////              color: Colors.blue,
-////              width: 300.0,
-////              height: 200.0,
-////              child: FittedBox(
-////                fit: BoxFit.contain,
-////                child: Text(s),
-////              ),
-////            ),
-////              child: Text(s)
-//                  child: RichText(text: span)),
-//            ],
-              ),
-        ),
-      ),
-    );
+//    return MaterialApp(
+//      home: Scaffold(
+//        body: SafeArea(
+//          child: Column(children: list
+////            children: <Widget>[
+////              Center(
+//////            child: Container(
+//////              color: Colors.blue,
+//////              width: 300.0,
+//////              height: 200.0,
+//////              child: FittedBox(
+//////                fit: BoxFit.contain,
+//////                child: Text(s),
+//////              ),
+//////            ),
+//////              child: Text(s)
+////                  child: RichText(text: span)),
+////            ],
+//              ),
+//        ),
+//      ),
+//    );
+
+    return Column(children: list);
   }
 }

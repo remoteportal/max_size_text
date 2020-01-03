@@ -2,6 +2,8 @@
 
 Maximize size of text given available real-estate.
 
+Returns a Column(...).
+
 
 # Pull Requests
 Pull requests are welcome!
