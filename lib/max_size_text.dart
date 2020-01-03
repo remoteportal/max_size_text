@@ -44,7 +44,7 @@ class MaxSizeTextState extends State<MaxSizeText> {
   Widget build(BuildContext context) {
     String s = widget.text;
 
-    print("s=$s len=${s.length}");
+    // print("s=$s len=${s.length}");
 
 //    TextSpan span = new TextSpan(
 //        style: new TextStyle(
@@ -59,7 +59,7 @@ class MaxSizeTextState extends State<MaxSizeText> {
 
     double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;
-    print("screen: width=$width height=$height");
+    // print("screen: width=$width height=$height");
 
     String orig = s;
     int parts = 0;
@@ -70,7 +70,7 @@ class MaxSizeTextState extends State<MaxSizeText> {
       s = orig;
       i++;
       parts++;
-      print("### LOOP $i: parts=$parts");
+      // print("### LOOP $i: parts=$parts");
       bool good = true;
       a.clear();
 
@@ -82,10 +82,10 @@ class MaxSizeTextState extends State<MaxSizeText> {
         TextPainter tp =
             new TextPainter(text: span, textDirection: TextDirection.ltr);
         tp.layout();
-        print("width=${tp.width}");
+        // print("width=${tp.width}");
 
         if (tp.width > width) {
-          print("TOO WIDE! ${tp.width} > $width");
+          // print("TOO WIDE! ${tp.width} > $width");
           good = false;
         }
       }
@@ -94,7 +94,7 @@ class MaxSizeTextState extends State<MaxSizeText> {
         add(s);
       } else {
         int seg = s.length ~/ parts;
-        print("seg=$seg");
+        // print("seg=$seg");
         while (seg > 0 && good) {
 //      print("s.l=${s.length}");
 //      print("parts=$parts");
@@ -107,7 +107,7 @@ class MaxSizeTextState extends State<MaxSizeText> {
             mid = findWordBoundary(s, seg);
 
             if (mid == 0) {
-              print('PROBLEM');
+              // print('PROBLEM');
               add(s);
               break;
             } else {
@@ -120,7 +120,7 @@ class MaxSizeTextState extends State<MaxSizeText> {
         if (good) {
           break;
         } else {
-          print("GO AGAIN");
+          // print("GO AGAIN");
           continue;
         }
       }
