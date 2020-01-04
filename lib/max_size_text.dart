@@ -189,3 +189,18 @@ class MaxSizeTextState extends State<MaxSizeText> {
     return Column(children: list);
   }
 }
+
+
+
+//WORKS
+//          SizedBox(
+//            child: AutoSizeText(
+////              widget.text + '!',
+//                'a b c d e f g h i',
+////            style: TextStyle(fontSize: 20),
+//                maxLines: 20,
+//                minFontSize: 40),
+////            child: Text('xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'),
+//            height: 100,
+//            width: 100,
+//          ),
