@@ -16,6 +16,10 @@ class MaxSizeText extends StatefulWidget {
 
 class MaxSizeTextState extends State<MaxSizeText> {
   int findWordBoundary(String s, int mid) {
+    if (mid >= s.length) {
+      return 0;
+    }
+
 //    print("in mid=$mid");
     int i = mid;
     while (i > 0) {
@@ -105,7 +109,6 @@ class MaxSizeTextState extends State<MaxSizeText> {
             break;
           } else {
             mid = findWordBoundary(s, seg);
-
             if (mid == 0) {
               // print('PROBLEM');
               add(s);
@@ -189,8 +192,6 @@ class MaxSizeTextState extends State<MaxSizeText> {
     return Column(children: list);
   }
 }
-
-
 
 //WORKS
 //          SizedBox(
