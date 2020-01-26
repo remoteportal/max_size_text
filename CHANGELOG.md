@@ -1,10 +1,6 @@
 # Changelog
 
-## Version 0.1.0 (2019-12-15)
 
-- Added full example
+## Version 1.0.10 (2020-01-26)
 
-
-## Version 0.0.1 (2019-12-15)
-
-- basic text highlighting functionality
+- initial public version

@@ -49,7 +49,7 @@ class MaxSizeTextState extends State<MaxSizeText> {
   Widget build(BuildContext context) {
     String s = widget.text;
 
-    // print("s=$s len=${s.length}");
+//    print("s=$s len=${s.length}");
 
 //    TextSpan span = new TextSpan(
 //        style: new TextStyle(
@@ -62,20 +62,24 @@ class MaxSizeTextState extends State<MaxSizeText> {
 //    log("width=${tp.width}");
 //
 
-    double width = MediaQuery.of(context).size.width;
+    double screenWidth = MediaQuery.of(context).size.width;
 //    double height = MediaQuery.of(context).size.height;
-    // print("screen: width=$width height=$height");
+    // print("screen: screenWidth=$width height=$height");
 
     String orig = s;
     int parts = 0;
-    int i = 0;
+    int ensureNotInfiniteLoop = 0;
     TextSpan span;
     var a = List<String>();
-    while (i < 30) {
+
+    //HC//ARB: 30 just to make sure doesn't get into an infinite-loop
+    while (ensureNotInfiniteLoop < 30) {
+      // keep dividing equally into ever-smaller chunks until it fits horizontally
+
       s = orig;
-      i++;
+      ensureNotInfiniteLoop++;
       parts++;
-      // print("### LOOP $i: parts=$parts");
+      //screenWidth("### LOOP $ensureNotInfiniteLoop: parts=$parts");
       bool good = true;
       a.clear();
 
@@ -87,22 +91,24 @@ class MaxSizeTextState extends State<MaxSizeText> {
         TextPainter tp =
             new TextPainter(text: span, textDirection: TextDirection.ltr);
         tp.layout();
-        // print("width=${tp.width}");
 
-        if (tp.width > width) {
-          // print("TOO WIDE! ${tp.width} > $width");
+        if (tp.width > screenWidth) {
+          //screenWidth("add: $s => width=${tp.width} => TOO WIDE! ${tp.width} > $screenWidth => !good");
           good = false;
+        } else {
+          //screenWidth("add: $s => width=${tp.width} <= $screenWidth => good");
         }
-      }
+      } // add
 
       if (parts == 1) {
+        //screenWidth("parts=1");
         add(s);
       } else {
         int seg = s.length ~/ parts;
-        // print("seg=$seg");
+        //screenWidth("parts!=1: seg=$seg");
         while (seg > 0 && good) {
-//      print("s.l=${s.length}");
-//      print("parts=$parts");
+          //screenWidth("s.l=${s.length}");
+          //screenWidth("parts=$parts");
           int mid;
           if (s.length < seg) {
             // done... just copy rest
@@ -111,7 +117,7 @@ class MaxSizeTextState extends State<MaxSizeText> {
           } else {
             mid = findWordBoundary(s, seg);
             if (mid == 0) {
-              // print('PROBLEM');
+              //screenWidth('PROBLEM');
               add(s);
               break;
             } else {
@@ -120,13 +126,14 @@ class MaxSizeTextState extends State<MaxSizeText> {
             }
           }
         }
+      }
 
-        if (good) {
-          break;
-        } else {
-          // print("GO AGAIN");
-          continue;
-        }
+      if (good) {
+        //screenWidth("break");
+        break;
+      } else {
+        //screenWidth("GO AGAIN");
+        continue;
       }
 
 ////      print("s.l=${s.length}");
@@ -155,7 +162,7 @@ class MaxSizeTextState extends State<MaxSizeText> {
 //      if (tp.width < width) {
 //        break;
 //      }
-//      i++;
+//      ensureNotInfiniteLoop++;
 //      if (true) break;
     } //while
 

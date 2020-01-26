@@ -7,18 +7,16 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new MaterialApp(
-      home: SafeArea(
-        child: Scaffold(
-            body: Center(
-                child: MaxSizeText(
-                    text:
-                        'The Courage to Be Disliked: The Japanese Phenomenon That Shows You How to Change Your Life and Achieve Real Happiness',
-                    textStyle: new TextStyle(
-                        color: Colors.red[800],
-                        fontSize: 32,
-                        fontFamily: 'Roboto')))),
-      ),
-//                child: Text('hello')
-    );
+        home: SafeArea(
+            child: Scaffold(
+                body: Center(
+                    child: MaxSizeText(
+                        text:
+                            'The Courage to Be Disliked: The Japanese Phenomenon That Shows You How to Change Your Life and Achieve Real Happiness',
+//                        '404: /phone',
+                        textStyle: new TextStyle(
+                            color: Colors.red[800],
+                            fontSize: 32,
+                            fontFamily: 'Roboto'))))));
   }
 }
