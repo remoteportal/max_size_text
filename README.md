@@ -9,6 +9,10 @@ Returns a Column(...).
 Pull requests are welcome!
 
 
+# Bugs
+- 404: /phone           drops 'e'               textStyle: TextStyle(fontSize: 35))
+
+
 # Usage
 Add a new dependency line to your project/pubspec.yaml file:
 

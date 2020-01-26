@@ -3,7 +3,8 @@ library max_size_text;
 import 'package:flutter/material.dart';
 
 class MaxSizeText extends StatefulWidget {
-  MaxSizeText({this.text, this.textStyle});
+  MaxSizeText({this.text, this.textStyle})
+      : assert(text != null, 'text required');
 
   final String text;
   final TextStyle textStyle;
@@ -62,7 +63,7 @@ class MaxSizeTextState extends State<MaxSizeText> {
 //
 
     double width = MediaQuery.of(context).size.width;
-    double height = MediaQuery.of(context).size.height;
+//    double height = MediaQuery.of(context).size.height;
     // print("screen: width=$width height=$height");
 
     String orig = s;
