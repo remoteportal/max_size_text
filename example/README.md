@@ -16,7 +16,6 @@ class MyApp extends StatelessWidget {
                     child: MaxSizeText(
                         text:
                             'The Courage to Be Disliked: The Japanese Phenomenon That Shows You How to Change Your Life and Achieve Real Happiness',
-//                        '404: /phone',
                         textStyle: new TextStyle(
                             color: Colors.red[800],
                             fontSize: 32,

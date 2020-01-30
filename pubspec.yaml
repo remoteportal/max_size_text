@@ -1,6 +1,6 @@
 name: max_size_text
 description: Maximize size of Flutter text given available real-estate, with the intention of filling a space.
-version: 1.0.10
+version: 1.0.11    #NOEDIT
 homepage: https://github.com/remoteportal/max_size_text
 
 environment:

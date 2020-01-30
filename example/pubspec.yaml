@@ -8,12 +8,12 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  max_size_text:
-    path: ../
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  max_size_text:
+    path: ../
 
 flutter:
   uses-material-design: true

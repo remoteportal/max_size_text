@@ -82,12 +82,12 @@ packages:
     source: hosted
     version: "0.12.6"
   max_size_text:
-    dependency: "direct main"
+    dependency: "direct dev"
     description:
       path: ".."
       relative: true
     source: path
-    version: "1.0.9"
+    version: "1.0.10"
   meta:
     dependency: transitive
     description:
