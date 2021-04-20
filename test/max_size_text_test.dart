@@ -8,8 +8,7 @@ void main() {
   testWidgets('test the thing!', (WidgetTester tester) async {
     await tester.pumpWidget(Directionality(
         child: MaxSizeText(
-            text:
-                'The Courage to Be Disliked: The Japanese Phenomenon That Shows You How to Change Your Life and Achieve Real Happiness',
+            'The Courage to Be Disliked: The Japanese Phenomenon That Shows You How to Change Your Life and Achieve Real Happiness',
             textStyle: new TextStyle(
                 color: Colors.red[800], fontSize: 32, fontFamily: 'Roboto')),
         textDirection: TextDirection.ltr));

@@ -3,11 +3,10 @@ library max_size_text;
 import 'package:flutter/material.dart';
 
 class MaxSizeText extends StatefulWidget {
-  MaxSizeText({this.text, this.textStyle})
-      : assert(text != null, 'text required');
+  MaxSizeText(this.text, {this.textStyle});
 
   final String text;
-  final TextStyle textStyle;
+  final TextStyle? textStyle;
 
   @override
   MaxSizeTextState createState() {
@@ -70,7 +69,7 @@ class MaxSizeTextState extends State<MaxSizeText> {
     int parts = 0;
     int ensureNotInfiniteLoop = 0;
     TextSpan span;
-    var a = List<String>();
+    List<String> a = [];
 
     //HC//ARB: 30 just to make sure doesn't get into an infinite-loop
     while (ensureNotInfiniteLoop < 30) {
@@ -166,7 +165,7 @@ class MaxSizeTextState extends State<MaxSizeText> {
 //      if (true) break;
     } //while
 
-    var list = List<Widget>();
+    List<Widget> list = [];
     a.forEach((sub) {
 //      print("sub: $sub");
       span = new TextSpan(style: widget.textStyle, text: sub);

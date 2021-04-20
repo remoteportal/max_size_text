@@ -11,8 +11,7 @@ class MyApp extends StatelessWidget {
             child: Scaffold(
                 body: Center(
                     child: MaxSizeText(
-                        text:
-                            'The Courage to Be Disliked: The Japanese Phenomenon That Shows You How to Change Your Life and Achieve Real Happiness',
+                        'The Courage to Be Disliked: The Japanese Phenomenon That Shows You How to Change Your Life and Achieve Real Happiness',
                         textStyle: new TextStyle(
                             color: Colors.red[800],
                             fontSize: 32,
